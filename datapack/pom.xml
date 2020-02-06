@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.github.rremer</groupId>
+        <artifactId>minecraft-modpack-almond-parent</artifactId>
+        <version>1.15.2-1-SNAPSHOT</version>
+    </parent>
+
+    <groupId>com.github.rremer</groupId>
+    <artifactId>minecraft-modpack-almond-datapack</artifactId>
+    <version>1.15.2-1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>Minecraft Modpack Almond Datapack</name>
+    <description>Datapack for a vanilla-substitute for Minecraft.</description>
+
+    <properties>
+        <github.site.location>${project.version}/${project.artifactId}</github.site.location>
+        <path.datapack>${project.build.outputDirectory}/data/almond</path.datapack>
+        <path.minecraft-datapack-schema>${project.build.outputDirectory}/schema</path.minecraft-datapack-schema>
+        <version.json-schema-validator>1.2.0</version.json-schema-validator>
+        <version.minecraft-datapack-schema>1.14.4-3</version.minecraft-datapack-schema>
+        <version.minecraft.datapack.compat>4</version.minecraft.datapack.compat>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.github.rremer</groupId>
+            <artifactId>minecraft-datapack-schema</artifactId>
+            <version>${version.minecraft-datapack-schema}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <resources>
+            <resource>
+                <filtering>true</filtering>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>com.groupon.maven.plugin.json</groupId>
+                <artifactId>json-schema-validator</artifactId>
+                <configuration>
+                    <validations>
+                        <!--
+            <validation>
+              <directory>${path.datapack}/advancements</directory>
+              <jsonSchema>${path.minecraft-datapack-schema}/advancement.schema</jsonSchema>
+              <includes>
+                <include>**/*.json</include>
+              </includes>
+            </validation>
+            -->
+                        <!--
+            <validation>
+              <directory>${path.datapack}/tags</directory>
+              <jsonSchema>${path.minecraft-datapack-schema}/tag.schema</jsonSchema>
+              <includes>
+                <include>**/*.json</include>
+              </includes>
+            </validation>
+            -->
+                        <!--
+            <validation>
+              <directory>${path.datapack}/recipes</directory>
+              <jsonSchema>${path.minecraft-datapack-schema}/recipe.schema</jsonSchema>
+              <includes>
+                <include>**/*.json</include>
+              </includes>
+            </validation>
+            -->
+                        <!--
+            <validation>
+              <directory>${path.datapack}/loot_tables</directory>
+              <jsonSchema>${path.minecraft-datapack-schema}/loot_table.schema</jsonSchema>
+              <includes>
+                <include>**/*.json</include>
+              </includes>
+            </validation>
+            -->
+                        <validation>
+                            <directory>${project.outputDirectory}</directory>
+                            <jsonSchema>${path.minecraft-datapack-schema}/mcmeta.schema</jsonSchema>
+                            <includes>
+                                <include>**/*.mcmeta</include>
+                            </includes>
+                        </validation>
+                    </validations>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>validate</goal>
+                        </goals>
+                        <phase>verify</phase>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>datapack</id>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <phase>package</phase>
+                        <configuration>
+                            <descriptor>src/assembly/datapack.xml</descriptor>
+                            <finalName>${project.name}-${project.version}</finalName>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>unpack</id>
+                        <goals>
+                            <goal>unpack-dependencies</goal>
+                        </goals>
+                        <phase>generate-resources</phase>
+                        <configuration>
+                            <includeGroupIds>${project.groupId}</includeGroupIds>
+                            <includeArtifactIds>minecraft-datapack-schema</includeArtifactIds>
+                            <includes>**/*.schema</includes>
+                            <outputDirectory>${project.build.outputDirectory}</outputDirectory>
+                            <overWriteSnapshots>true</overWriteSnapshots>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <url>${github.site.url}/${github.site.location}</url>
+
+    <organization>
+        <name>Royce Remer</name>
+        <url>https://github.com/rremer/</url>
+    </organization>
+
+    <developers>
+        <developer>
+            <id>rremer</id>
+            <email>royceremer@gmail.com</email>
+            <timezone>America/Los_Angeles</timezone>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git:${scm.url}.git</connection>
+        <developerConnection>scm:git:git:${scm.url}.git</developerConnection>
+        <url>${scm.url}</url>
+    </scm>
+
+    <issueManagement>
+        <system>Github Issues</system>
+        <url>${scm.url}/issues</url>
+    </issueManagement>
+
+    <ciManagement>
+        <system>travis</system>
+        <url>https://travis-ci.org/rremer/minecraft-datapack-schema</url>
+    </ciManagement>
+
+</project>
