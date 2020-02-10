@@ -18,10 +18,25 @@
 
     <properties>
         <github.site.location>${project.version}/${project.artifactId}</github.site.location>
-        <version.download-maven-plugin>1.5.0</version.download-maven-plugin>
+
+        <server.gcOptions>-XX:+UseG1GC</server.gcOptions>
+        <server.xmsGB>4</server.xmsGB>
+        <server.xmxGB>12</server.xmxGB>
+        <url.fabric.installerName>fabric-installer.jar</url.fabric.installerName>
+        <url.fabric.launcherName>fabric-server-launch.jar</url.fabric.launcherName>
+        <url.mods.target>${project.build.directory}/mods</url.mods.target>
+        <url.server.target>${project.build.directory}/server</url.server.target>
+        <version.exec-maven-plugin>1.6.0</version.exec-maven-plugin>
+        <version.fabric>0.7.8+build.184</version.fabric>
     </properties>
 
     <build>
+        <resources>
+            <resource>
+                <filtering>true</filtering>
+                <directory>src/main/resources/filtered</directory>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>com.googlecode.maven-download-plugin</groupId>
@@ -29,13 +44,97 @@
                 <version>${version.download-maven-plugin}</version>
                 <executions>
                     <execution>
-                        <id>server</id>
+                        <id>fabric-installer</id>
                         <goals>
                             <goal>wget</goal>
                         </goals>
+                        <phase>generate-sources</phase>
                         <configuration>
-                            https://launcher.mojang.com/v1/objects/bb2b6b1aefcd70dfd1892149ac3a215f6c636b07/server.jar
-                            <url>https://launcher.mojang.com/v1/objects/bb2b6b1aefcd70dfd1892149ac3a215f6c636b07/server.jar</url>
+                            <url>https://maven.fabricmc.net/net/fabricmc/fabric-installer/0.5.2.39/fabric-installer-0.5.2.39.jar</url>
+                            <outputDirectory>${url.server.target}</outputDirectory>
+                            <outputFileName>${url.fabric.installerName}</outputFileName>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>fabric-api</id>
+                        <goals>
+                            <goal>wget</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <url>https://media.forgecdn.net/files/2875/599/fabric-api-0.4.30%2Bbuild.294-1.16.jar</url>
+                            <outputDirectory>${url.mods.target}</outputDirectory>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>rei</id>
+                        <goals>
+                            <goal>wget</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <url>https://media.forgecdn.net/files/2875/834/RoughlyEnoughItems-4.0.0-unstable.202002060407.jar</url>
+                            <outputDirectory>${url.mods.target}</outputDirectory>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>carpet</id>
+                        <goals>
+                            <goal>wget</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <url>https://media.forgecdn.net/files/2875/788/fabric-carpet-20w06a-1.3.9%2Bv200206.jar</url>
+                            <outputDirectory>${url.mods.target}</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>server</id>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <phase>package</phase>
+                        <configuration>
+                            <descriptor>src/assembly/server.xml</descriptor>
+                            <finalName>${project.build.finalName}</finalName>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>${version.exec-maven-plugin}</version>
+                <executions>
+                    <execution>
+                        <id>fabric-installer</id>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <phase>compile</phase>
+                        <configuration>
+                            <executable>java</executable>
+                            <workingDirectory>${url.server.target}</workingDirectory>
+                            <environmentVariables></environmentVariables>
+                            <arguments>
+                                <argument>-jar</argument>
+                                <argument>${url.fabric.installerName}</argument>
+                                <argument>server</argument>
+                                <argument>-downloadMinecraft</argument>
+                                <argument>-snapshot</argument>
+                                <argument>-mcversion</argument>
+                                <argument>${version.minecraft}</argument>
+                                <argument>-noprofile</argument>
+                                <argument>-loader</argument>
+                                <argument>${version.fabric}</argument>
+                            </arguments>
                         </configuration>
                     </execution>
                 </executions>

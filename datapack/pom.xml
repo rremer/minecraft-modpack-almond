@@ -128,7 +128,7 @@
                         </goals>
                         <phase>generate-resources</phase>
                         <configuration>
-                            <includeGroupIds>${project.groupId}</includeGroupIds>
+                            <includeGroupIds>com.github.rremer</includeGroupIds>
                             <includeArtifactIds>minecraft-datapack-schema</includeArtifactIds>
                             <includes>**/*.schema</includes>
                             <outputDirectory>${project.build.outputDirectory}</outputDirectory>

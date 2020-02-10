@@ -17,8 +17,9 @@
     <description>A vanilla-substitute for Minecraft</description>
 
     <modules>
-        <module>datapack</module>
+        <!--<module>datapack</module>-->
         <module>server</module>
+        <module>client</module>
         <module>image</module>
     </modules>
 
@@ -29,7 +30,8 @@
         <parameter.disable.semantic.versioning>true</parameter.disable.semantic.versioning>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <scm.url>https://github.com/${github.owner}/${github.project}</scm.url>
-        <version.minecraft>1.15.2</version.minecraft>
+        <version.download-maven-plugin>1.5.0</version.download-maven-plugin>
+        <version.minecraft>20w06a</version.minecraft>
     </properties>
 
     <url>${github.site.url}/${github.site.location}</url>

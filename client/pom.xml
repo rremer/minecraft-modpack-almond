@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.github.rremer</groupId>
+        <artifactId>minecraft-modpack-almond-parent</artifactId>
+        <version>1.15.2-1-SNAPSHOT</version>
+    </parent>
+
+    <groupId>com.github.rremer</groupId>
+    <artifactId>minecraft-modpack-almond-client</artifactId>
+    <version>1.15.2-1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>Minecraft Modpack Almond Client</name>
+    <description>Client for a vanilla-substitute for Minecraft.</description>
+
+    <properties>
+        <github.site.location>${project.version}/${project.artifactId}</github.site.location>
+        <url.mods.target>${project.build.directory}/mods</url.mods.target>
+        <version.lwjgl>3.2.2</version.lwjgl>
+    </properties>
+
+    <build>
+        <resources>
+            <resource>
+                <filtering>true</filtering>
+                <directory>src/main/resources/filtered</directory>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>com.googlecode.maven-download-plugin</groupId>
+                <artifactId>download-maven-plugin</artifactId>
+                <version>${version.download-maven-plugin}</version>
+                <executions>
+                    <execution>
+                        <id>cloth-events</id>
+                        <goals>
+                            <goal>wget</goal>
+                        </goals>
+                        <configuration>
+                            <url>https://media.forgecdn.net/files/2873/521/cloth-events-1.2.0.jar</url>
+                            <outputDirectory>${url.mods.target}</outputDirectory>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>cloth-config</id>
+                        <goals>
+                            <goal>wget</goal>
+                        </goals>
+                        <configuration>
+                            <url>https://media.forgecdn.net/files/2875/558/config-2-2.9.3.jar</url>
+                            <outputDirectory>${url.mods.target}</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>client-mmc</id>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <phase>package</phase>
+                        <configuration>
+                            <descriptor>src/assembly/client-mmc.xml</descriptor>
+                            <finalName>${project.name}-${project.version}</finalName>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <url>${github.site.url}/${github.site.location}</url>
+
+    <organization>
+        <name>Royce Remer</name>
+        <url>https://github.com/rremer/</url>
+    </organization>
+
+    <developers>
+        <developer>
+            <id>rremer</id>
+            <email>royceremer@gmail.com</email>
+            <timezone>America/Los_Angeles</timezone>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git:${scm.url}.git</connection>
+        <developerConnection>scm:git:git:${scm.url}.git</developerConnection>
+        <url>${scm.url}</url>
+    </scm>
+
+    <issueManagement>
+        <system>Github Issues</system>
+        <url>${scm.url}/issues</url>
+    </issueManagement>
+
+    <ciManagement>
+        <system>travis</system>
+        <url>https://travis-ci.org/rremer/minecraft-modpack-almond</url>
+    </ciManagement>
+
+</project>

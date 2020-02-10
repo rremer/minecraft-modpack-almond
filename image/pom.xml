@@ -18,6 +18,7 @@
 
     <properties>
         <github.site.location>${project.version}/${project.artifactId}</github.site.location>
+        <image.tag>rremer/minecraft-modpack-almond</image.tag>
         <path.datapack>${project.build.outputDirectory}/data/almond</path.datapack>
         <path.minecraft-datapack-schema>${project.build.outputDirectory}/schema</path.minecraft-datapack-schema>
         <version.fabric8-maven-plugin>4.3.1</version.fabric8-maven-plugin>
@@ -26,10 +27,12 @@
     <build>
         <plugins>
             <plugin>
-
                 <groupId>io.fabric8</groupId>
                 <artifactId>fabric8-maven-plugin</artifactId>
                 <version>${version.fabric8-maven-plugin}</version>
+                <configuration>
+                    <name>${image.tag}</name>
+                </configuration>
             </plugin>
         </plugins>
     </build>
