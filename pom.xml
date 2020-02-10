@@ -14,7 +14,7 @@
     <packaging>pom</packaging>
 
     <name>Minecraft Modpack Almond</name>
-    <description>A vanilla-substitute for Minecraft</description>
+    <description>A Fabric/datapack vanilla-substitute for Minecraft</description>
 
     <modules>
         <!--<module>datapack</module>-->
