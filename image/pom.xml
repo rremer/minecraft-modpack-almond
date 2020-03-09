@@ -4,7 +4,7 @@
 
     <parent>
         <groupId>com.github.rremer</groupId>
-        <artifactId>minecraft-modpack-almond-parent</artifactId>
+        <artifactId>minecraft-modpack-almond</artifactId>
         <version>1.15.2-1-SNAPSHOT</version>
     </parent>
 
@@ -19,21 +19,105 @@
     <properties>
         <github.site.location>${project.version}/${project.artifactId}</github.site.location>
         <image.tag.source>docker.io/azul/zulu-openjdk-alpine:8-jre</image.tag.source>
-        <image.tag.target>rremer/minecraft-modpack-almond</image.tag.target>
-        <path.datapack>${project.build.outputDirectory}/data/almond</path.datapack>
-        <path.minecraft-datapack-schema>${project.build.outputDirectory}/schema</path.minecraft-datapack-schema>
-        <version.fabric8-maven-plugin>4.3.1</version.fabric8-maven-plugin>
+        <image.tag.target>${github.owner}/${project.parent.artifactId}</image.tag.target>
+        <image.targetdir>/${project.parent.artifactId}</image.targetdir>
+        <image.workdir>${image.targetdir}/.minecraft</image.workdir>
+        <version.docker-maven-plugin>0.33.0</version.docker-maven-plugin>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>minecraft-modpack-almond-server</artifactId>
+            <version>${project.version}</version>
+            <type>tar.gz</type>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>
             <plugin>
                 <groupId>io.fabric8</groupId>
-                <artifactId>fabric8-maven-plugin</artifactId>
-                <version>${version.fabric8-maven-plugin}</version>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>${version.docker-maven-plugin}</version>
                 <configuration>
-                    <name>${image.tag.target}</name>
+                    <images>
+                        <image>
+                            <name>${image.tag.target}</name>
+                            <build>
+                                <from>${image.tag.source}</from>
+                                <cmd>./start_server.sh start_server.properties</cmd>
+                                <workdir>${image.workdir}</workdir>
+                                <ports>
+                                    <port>25565</port>
+                                </ports>
+                                <env>
+                                    <EULA_MINECRAFT_URL>https://account.mojang.com/documents/minecraft_eula</EULA_MINECRAFT_URL>
+                                    <EULA_MINECRAFT_BOOL>false</EULA_MINECRAFT_BOOL>
+                                </env>
+                                <labels>
+                                    <MINECRAFT_VERSION>${version.minecraft}</MINECRAFT_VERSION>
+                                    <MODPACK_VERSION>${project.version}</MODPACK_VERSION>
+
+                                    <org.opencontainers.image.created>${maven.build.timestamp}</org.opencontainers.image.created>
+                                    <org.opencontainers.image.url>${scm.url}</org.opencontainers.image.url>
+                                    <org.opencontainers.image.source>${scm.url}</org.opencontainers.image.source>
+                                    <org.opencontainers.image.version>${project.version}</org.opencontainers.image.version>
+                                    <org.opencontainers.image.title>${project.name}</org.opencontainers.image.title>
+                                    <org.opencontainers.image.description>${project.description}</org.opencontainers.image.description>
+                                    <org.opencontainers.image.licenses>${parameter.license}</org.opencontainers.image.licenses>
+                                </labels>
+                                <healthCheck>
+                                    <interval>1m</interval>
+                                    <timeout>3s</timeout>
+                                    <startPeriod>5m</startPeriod>
+                                    <retries>3</retries>
+                                    <cmd>curl -f http://localhost/ || exit 1</cmd>
+                                </healthCheck>
+                                <assembly>
+                                    <targetDir>${image.targetdir}</targetDir>
+                                    <inline>
+                                        <dependencySets>
+                                            <dependencySet>
+                                                <includes>
+                                                    <include>${project.groupId}:minecraft-modpack-almond-server</include>
+                                                </includes>
+                                                <unpack>true</unpack>
+                                                <outputDirectory>.</outputDirectory>
+                                                <outputFileNameMapping>${project.parent.artifactId}</outputFileNameMapping>
+                                            </dependencySet>
+                                        </dependencySets>
+                                    </inline>
+                                </assembly>
+                            </build>
+                        </image>
+                    </images>
                 </configuration>
+
+                <executions>
+                    <execution>
+                        <id>start</id>
+                        <goals>
+                            <goal>build</goal>
+                            <goal>start</goal>
+                        </goals>
+                        <phase>pre-integration-test</phase>
+                        <configuration>
+                            <run>
+                                <env>
+                                    <EULA_MINECRAFT_BOOL>true</EULA_MINECRAFT_BOOL>
+                                </env>
+                            </run>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>stop</id>
+                        <goals>
+                            <goal>stop</goal>
+                        </goals>
+                        <phase>post-integration-test</phase>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>

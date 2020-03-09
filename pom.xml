@@ -9,7 +9,7 @@
     </parent>
 
     <groupId>com.github.rremer</groupId>
-    <artifactId>minecraft-modpack-almond-parent</artifactId>
+    <artifactId>minecraft-modpack-almond</artifactId>
     <version>1.15.2-1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
@@ -31,7 +31,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <scm.url>https://github.com/${github.owner}/${github.project}</scm.url>
         <version.download-maven-plugin>1.5.0</version.download-maven-plugin>
-        <version.minecraft>20w06a</version.minecraft>
+        <version.minecraft>20w10a</version.minecraft>
     </properties>
 
     <url>${github.site.url}/${github.site.location}</url>

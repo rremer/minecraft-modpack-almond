@@ -7,6 +7,7 @@
 
 [![Build Status](https://img.shields.io/travis/rremer/minecraft-modpack-almond)](https://travis-ci.org/rremer/minecraft-modpack-almond)
 [![Maven Central](https://img.shields.io/nexus/r/com.github.rremer/minecraft-modpack-almond?server=https%3A%2F%2Foss.sonatype.org)](https://search.maven.org/artifact/com.github.rremer/minecraft-modpack-almond/20w06a-1/jar)
+![Docker Tag](https://img.shields.io/docker/v/rremer/minecraft-modpack-almond/20w06a-1?label=docker.io)
 [![License](https://img.shields.io/github/license/rremer/minecraft-modpack-almond)](https://opensource.org/licenses/MIT)
 [![Keybase PGP](https://img.shields.io/keybase/pgp/rremer)](https://keybase.io/rremer/pgp_keys.asc)
 
@@ -29,6 +30,17 @@ Currently, this modpack is distributed as a [MultiMC] zip.
 mvn clean install
 ```
 
+## Server Usage
+
+A container image is shipped to [docker.io/rremer/minecraft-modpack-almond]. You can start it via:
+```sh
+docker run -itPe EULA_MINECRAFT_BOOL=true rremer/minecraft-modpack-almond
+```
+
+```sh
+mvn clean install
+```
+
 ## Releasing
 
 ```sh
@@ -46,3 +58,4 @@ A version number of this project's artifacts is built as ```<minecraft.version>-
 [MultiMC]:https://multimc.org/
 [Download MultiMC]:https://multimc.org/#Download
 [MMC client release 20w06a-1]:https://storage.googleapis.com/minecraft-modpack-almond/1.15.2/Almond-1.15.2-client-mmc.zip
+[docker.io/rremer/minecraft-modpack-almond]:https://hub.docker.com/r/rremer/minecraft-modpack-almond/tags
