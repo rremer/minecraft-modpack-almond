@@ -5,12 +5,12 @@
     <parent>
         <groupId>com.github.rremer</groupId>
         <artifactId>minecraft-modpack-almond</artifactId>
-        <version>1.15.2-1-SNAPSHOT</version>
+        <version>1.16.0-1-SNAPSHOT</version>
     </parent>
 
     <groupId>com.github.rremer</groupId>
     <artifactId>minecraft-modpack-almond-server</artifactId>
-    <version>1.15.2-1-SNAPSHOT</version>
+    <version>1.16.0-1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>Minecraft Modpack Almond Server</name>
@@ -50,6 +50,10 @@
                     </execution>
                     <execution>
                         <id>carpet</id>
+                        <phase>generate-sources</phase>
+                    </execution>
+                    <execution>
+                        <id>carpet-extra</id>
                         <phase>generate-sources</phase>
                     </execution>
                     <execution>

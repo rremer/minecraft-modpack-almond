@@ -5,12 +5,12 @@
     <parent>
         <groupId>com.github.rremer</groupId>
         <artifactId>minecraft-modpack-almond</artifactId>
-        <version>1.15.2-1-SNAPSHOT</version>
+        <version>1.16.0-1-SNAPSHOT</version>
     </parent>
 
     <groupId>com.github.rremer</groupId>
     <artifactId>minecraft-modpack-almond-client</artifactId>
-    <version>1.15.2-1-SNAPSHOT</version>
+    <version>1.16.0-1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>Minecraft Modpack Almond Client</name>
@@ -48,6 +48,10 @@
                         <phase>generate-sources</phase>
                     </execution>
                     <execution>
+                        <id>carpet-extra</id>
+                        <phase>generate-sources</phase>
+                    </execution>
+                    <execution>
                         <id>rei</id>
                         <phase>generate-sources</phase>
                     </execution>
@@ -57,7 +61,7 @@
                             <goal>wget</goal>
                         </goals>
                         <configuration>
-                            <url>https://media.forgecdn.net/files/2873/521/cloth-events-1.2.0.jar</url>
+				<url>https://media.forgecdn.net/files/2894/930/cloth-events-2.0.0-unstable.202003051905.jar</url>
                             <outputDirectory>${url.mods.target}</outputDirectory>
                         </configuration>
                     </execution>
@@ -67,7 +71,7 @@
                             <goal>wget</goal>
                         </goals>
                         <configuration>
-                            <url>https://media.forgecdn.net/files/2875/558/config-2-2.9.3.jar</url>
+				<url>https://media.forgecdn.net/files/2897/362/config-2-3.0.2-unstable.202003090708.jar</url>
                             <outputDirectory>${url.mods.target}</outputDirectory>
                         </configuration>
                     </execution>
