@@ -17,7 +17,6 @@
     <description>A Fabric/datapack vanilla-substitute of Minecraft</description>
 
     <modules>
-        <!--<module>datapack</module>-->
         <module>server</module>
         <module>client</module>
         <module>image</module>

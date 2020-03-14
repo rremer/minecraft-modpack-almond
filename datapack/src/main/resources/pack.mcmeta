@@ -1,6 +1,0 @@
-{
-      "pack": {
-          "pack_format": ${version.minecraft.datapack.compat},
-          "description": "${project.description}"
-      }
-}
