@@ -67,6 +67,17 @@
                         <id>rei</id>
                         <phase>generate-sources</phase>
                     </execution>
+                    <execution>
+                        <id>leaf-decay</id>
+                        <goals>
+                            <goal>wget</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                        <configuration>
+				<url>https://media.forgecdn.net/files/2827/905/leaf-decay-1.1.1.jar</url>
+                            <outputDirectory>${url.mods.target}</outputDirectory>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
             <plugin>

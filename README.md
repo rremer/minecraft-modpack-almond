@@ -24,6 +24,7 @@ Currently, this modpack is distributed as a [MultiMC] zip.
 5. When the download finishes, double-click 'Almond-20w06a-1-client-mmc'
 6. If you are not signed into a Mojang account, you will be promted for credentials
 
+
 ## Building
 
 ```sh
@@ -37,14 +38,11 @@ A container image is shipped to [docker.io/rremer/minecraft-modpack-almond]. You
 docker run -itPe EULA_MINECRAFT_BOOL=true rremer/minecraft-modpack-almond
 ```
 
-```sh
-mvn clean install
-```
 
 ## Releasing
 
 ```sh
-mvn versions:set -DnewVersion=20w06a-1
+mvn versions:set -DnewVersion=1.16.0-1-SNAPSHOT
 mvn clean deploy -Dparameter.gpg.skip=false
 mvn site site-deploy
 ```
