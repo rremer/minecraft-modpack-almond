@@ -29,10 +29,13 @@
         <server.gcOptions>-XX:+UseG1GC</server.gcOptions>
         <server.xmsGB>4</server.xmsGB>
         <server.xmxGB>12</server.xmxGB>
+        <url.datapacks.target>${project.build.directory}/world/datapacks</url.datapacks.target>
 
         <url.fabric.launcherName>fabric-server-launch.jar</url.fabric.launcherName>
         <url.installer.target>${project.build.directory}/server</url.installer.target>
         <url.mods.target>${project.build.directory}/mods</url.mods.target>
+
+        <version.maven-dependency-plugin>3.1.2</version.maven-dependency-plugin>
     </properties>
 
     <build>
@@ -74,7 +77,7 @@
                         </goals>
                         <phase>generate-sources</phase>
                         <configuration>
-				<url>https://media.forgecdn.net/files/2827/905/leaf-decay-1.1.1.jar</url>
+                            <url>https://media.forgecdn.net/files/2827/905/leaf-decay-1.1.1.jar</url>
                             <outputDirectory>${url.mods.target}</outputDirectory>
                         </configuration>
                     </execution>
@@ -92,6 +95,33 @@
                         <phase>package</phase>
                         <configuration>
                             <descriptor>src/assembly/server.xml</descriptor>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>${version.maven-dependency-plugin}</version>
+                <executions>
+                    <execution>
+                        <id>datapack</id>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>${project.groupId}</groupId>
+                                    <artifactId>minecraft-modpack-almond-datapack</artifactId>
+                                    <version>${project.version}</version>
+                                    <type>zip</type>
+                                    <overWrite>true</overWrite>
+                                    <outputDirectory>${url.datapacks.target}</outputDirectory>
+                                </artifactItem>
+                            </artifactItems>
                         </configuration>
                     </execution>
                 </executions>

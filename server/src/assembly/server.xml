@@ -38,6 +38,13 @@
       </includes>
     </fileSet>
     <fileSet>
+      <directory>target/world</directory>
+      <outputDirectory>.minecraft/world</outputDirectory>
+      <includes>
+        <include>**/*</include>
+      </includes>
+    </fileSet>
+    <fileSet>
       <directory>target/mods</directory>
       <outputDirectory>.minecraft/mods</outputDirectory>
       <includes>

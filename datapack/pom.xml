@@ -25,7 +25,7 @@
 
         <version.json-schema-validator>1.2.0</version.json-schema-validator>
 
-	<!-- will use ref to ${version.minecraft} when we update that project -->
+        <!-- will use ref to ${version.minecraft} when we update that project -->
         <version.minecraft-datapack-schema>1.14.4-3</version.minecraft-datapack-schema>
     </properties>
 
