@@ -38,10 +38,10 @@
       </includes>
     </fileSet>
     <fileSet>
-      <directory>target/world</directory>
-      <outputDirectory>.minecraft/world</outputDirectory>
+      <directory>target/datapacks</directory>
+      <outputDirectory>.minecraft/datapacks</outputDirectory>
       <includes>
-        <include>**/*</include>
+        <include>*.zip</include>
       </includes>
     </fileSet>
     <fileSet>
@@ -65,6 +65,7 @@
       <directory>src/main/resources</directory>
       <outputDirectory>.minecraft</outputDirectory>
       <includes>
+        <include>*.xml</include>
         <include>*.conf</include>
         <include>*.properties</include>
       </includes>

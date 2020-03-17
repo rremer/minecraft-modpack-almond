@@ -34,12 +34,10 @@
 
         <url.fabric.installer>https://maven.fabricmc.net/net/fabricmc/fabric-installer/${version.fabric.installer}/fabric-installer-${version.fabric.installer}.jar</url.fabric.installer>
         <url.fabric.installerName>fabric-installer.jar</url.fabric.installerName>
-
         <url.mods.target>${project.build.directory}/mods</url.mods.target>
 
         <version.download-maven-plugin>1.5.0</version.download-maven-plugin>
         <version.exec-maven-plugin>1.6.0</version.exec-maven-plugin>
-
         <version.fabric.installer>0.5.2.39</version.fabric.installer>
         <version.fabric.loader>0.7.8+build.187</version.fabric.loader>
         <version.minecraft>20w10a</version.minecraft>

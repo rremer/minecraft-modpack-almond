@@ -18,6 +18,7 @@
 
     <properties>
         <github.site.location>${project.version}/${project.artifactId}</github.site.location>
+        <image.port>25565</image.port>
         <image.tag.source>docker.io/azul/zulu-openjdk-alpine:8-jre</image.tag.source>
         <image.tag.target>${github.owner}/${project.parent.artifactId}</image.tag.target>
         <image.targetdir>/${project.parent.artifactId}</image.targetdir>
@@ -49,7 +50,7 @@
                                 <cmd>./start_server.sh start_server.properties</cmd>
                                 <workdir>${image.workdir}</workdir>
                                 <ports>
-                                    <port>25565</port>
+                                    <port>${image.port}/tcp</port>
                                 </ports>
                                 <env>
                                     <EULA_MINECRAFT_URL>https://account.mojang.com/documents/minecraft_eula</EULA_MINECRAFT_URL>
@@ -68,11 +69,11 @@
                                     <org.opencontainers.image.licenses>${parameter.license}</org.opencontainers.image.licenses>
                                 </labels>
                                 <healthCheck>
-                                    <interval>1m</interval>
-                                    <timeout>3s</timeout>
-                                    <startPeriod>5m</startPeriod>
+                                    <interval>15s</interval>
+                                    <timeout>5s</timeout>
+                                    <startPeriod>2m</startPeriod>
                                     <retries>3</retries>
-                                    <cmd>curl -f http://localhost/ || exit 1</cmd>
+                                    <cmd>nc -w 3 127.0.0.1 ${image.port}</cmd>
                                 </healthCheck>
                                 <assembly>
                                     <targetDir>${image.targetdir}</targetDir>

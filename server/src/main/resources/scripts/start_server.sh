@@ -18,8 +18,15 @@ source "${PROPERTIES_FILEPATH}"
 # answer eula early
 echo "eula=${EULA_MINECRAFT_BOOL}" > eula.txt
 
+# populate a potentially out-of-container volume with datapacks
+if [ ! -d world/datapacks ]; then
+  mkdir -p world
+  cp -r datapacks world/
+fi
+
 # run the server
 java \
+-Dlog4j.configurationFile=log4j2.xml \
 "${JAVA_GARBAGE_COLLECT_OPTIONS}" \
 -Xms"${JAVA_MIN_HEAP_GB}g" \
 -Xmx"${JAVA_MAX_HEAP_GB}g" \

@@ -35,8 +35,13 @@ mvn clean install
 
 A container image is shipped to [docker.io/rremer/minecraft-modpack-almond]. You can start it via:
 ```sh
-docker run -itPe EULA_MINECRAFT_BOOL=true rremer/minecraft-modpack-almond
+docker run -d \
+  -p 25565:25565 \
+  -e EULA_MINECRAFT_BOOL=true \
+  -v /path/to/persistent/world:/minecraft-modpack-almond/.minecraft/world \
+  rremer/minecraft-modpack-almond
 ```
+... where ```/path/to/persistent/world``` is some real local filesystem to persist the world data between container restarts.
 
 
 ## Releasing

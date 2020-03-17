@@ -1,0 +1,18 @@
+<Configuration status="WARN" packages="net.minecraft,com.mojang">
+  <Appenders>
+    <Console name="STDOUT" target="SYSTEM_OUT" />
+    <RollingRandomAccessFile name="RollingRandomAccessFile"
+                         fileName="world/logs/latest.log"
+                      filePattern="world/logs/%d{yyyy-MM-dd}-%i.log.gz">
+      <Policies>
+        <TimeBasedTriggeringPolicy interval="12" modulate="true"/>
+      </Policies>
+    </RollingRandomAccessFile>
+  </Appenders>
+  <Loggers>
+    <Root level="info">
+      <AppenderRef ref="STDOUT"/>
+      <AppenderRef ref="RollingRandomAccessFile"/>
+    </Root>
+  </Loggers>
+</Configuration>

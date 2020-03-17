@@ -29,8 +29,8 @@
         <server.gcOptions>-XX:+UseG1GC</server.gcOptions>
         <server.xmsGB>4</server.xmsGB>
         <server.xmxGB>12</server.xmxGB>
-        <url.datapacks.target>${project.build.directory}/world/datapacks</url.datapacks.target>
 
+        <url.datapacks.target>${project.build.directory}/datapacks</url.datapacks.target>
         <url.fabric.launcherName>fabric-server-launch.jar</url.fabric.launcherName>
         <url.installer.target>${project.build.directory}/server</url.installer.target>
         <url.mods.target>${project.build.directory}/mods</url.mods.target>
