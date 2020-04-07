@@ -1,8 +1,8 @@
 # minecraft-modpack-almond
 
-[![Build Status](https://img.shields.io/travis/rremer/minecraft-modpack-almond)](https://travis-ci.org/rremer/minecraft-modpack-almond)
-[![Maven Central](https://img.shields.io/nexus/r/com.github.rremer/minecraft-modpack-almond?server=https%3A%2F%2Foss.sonatype.org)](https://search.maven.org/artifact/com.github.rremer/minecraft-modpack-almond/20w10a-1/pom)
-![Docker Tag](https://img.shields.io/docker/v/rremer/minecraft-modpack-almond/20w10a?label=docker.io)
+[![Build Status](https://img.shields.io/travis/rremer/minecraft-modpack-almond/master)](https://travis-ci.org/github/rremer/minecraft-modpack-almond)
+[![Maven Central](https://img.shields.io/maven-central/v/com.github.rremer/minecraft-modpack-almond-client.svg?label=client)](https://search.maven.org/artifact/com.github.rremer/minecraft-modpack-almond-client/20w10a-1/jar)
+[![Docker Tag](https://img.shields.io/docker/v/rremer/minecraft-modpack-almond/20w10a-1?label=docker)](https://hub.docker.com/repository/docker/rremer/minecraft-modpack-almond/general)
 [![License](https://img.shields.io/github/license/rremer/minecraft-modpack-almond)](https://opensource.org/licenses/MIT)
 [![Keybase PGP](https://img.shields.io/keybase/pgp/rremer)](https://keybase.io/rremer/pgp_keys.asc)
 
