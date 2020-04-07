@@ -44,6 +44,7 @@
                 <configuration>
                     <images>
                         <image>
+                            <alias>${project.artifactId}</alias>
                             <name>${image.tag.target}</name>
                             <build>
                                 <from>${image.tag.source}</from>
@@ -74,10 +75,10 @@
                                 </labels>
                                 <healthCheck>
                                     <interval>15s</interval>
-                                    <timeout>5s</timeout>
+                                    <timeout>3s</timeout>
                                     <startPeriod>2m</startPeriod>
                                     <retries>3</retries>
-                                    <cmd>nc -w 3 127.0.0.1 ${image.port}</cmd>
+                                    <cmd>nc -w 1 localhost ${image.port}</cmd>
                                 </healthCheck>
                                 <assembly>
                                     <targetDir>${image.targetdir}</targetDir>
@@ -95,6 +96,15 @@
                                     </inline>
                                 </assembly>
                             </build>
+                            <run>
+                                <wait>
+                                    <healthy>true</healthy>
+				    <time>120000</time>
+                                </wait>
+                                <env>
+                                    <EULA_MINECRAFT_BOOL>true</EULA_MINECRAFT_BOOL>
+                                </env>
+                            </run>
                         </image>
                     </images>
                 </configuration>
@@ -106,14 +116,6 @@
                             <goal>build</goal>
                             <goal>start</goal>
                         </goals>
-                        <phase>pre-integration-test</phase>
-                        <configuration>
-                            <run>
-                                <env>
-                                    <EULA_MINECRAFT_BOOL>true</EULA_MINECRAFT_BOOL>
-                                </env>
-                            </run>
-                        </configuration>
                     </execution>
                     <execution>
                         <id>stop</id>
