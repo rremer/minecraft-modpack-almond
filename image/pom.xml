@@ -56,6 +56,10 @@
                                     <EULA_MINECRAFT_URL>https://account.mojang.com/documents/minecraft_eula</EULA_MINECRAFT_URL>
                                     <EULA_MINECRAFT_BOOL>false</EULA_MINECRAFT_BOOL>
                                 </env>
+                                <tags>
+                                    <tag>latest</tag>
+                                    <tag>${project.version}</tag>
+                                </tags>
                                 <labels>
                                     <MINECRAFT_VERSION>${version.minecraft}</MINECRAFT_VERSION>
                                     <MODPACK_VERSION>${project.version}</MODPACK_VERSION>
@@ -117,6 +121,12 @@
                             <goal>stop</goal>
                         </goals>
                         <phase>post-integration-test</phase>
+                    </execution>
+                    <execution>
+                        <id>deploy</id>
+                        <goals>
+                            <goal>push</goal>
+                        </goals>
                     </execution>
                 </executions>
             </plugin>
