@@ -74,10 +74,10 @@
                                 </labels>
                                 <healthCheck>
                                     <interval>15s</interval>
-                                    <timeout>5s</timeout>
+                                    <timeout>3s</timeout>
                                     <startPeriod>2m</startPeriod>
                                     <retries>3</retries>
-                                    <cmd>nc -w 3 127.0.0.1 ${image.port}</cmd>
+                                    <cmd>nc -w 1 localhost ${image.port}</cmd>
                                 </healthCheck>
                                 <assembly>
                                     <targetDir>${image.targetdir}</targetDir>
@@ -95,32 +95,33 @@
                                     </inline>
                                 </assembly>
                             </build>
+                            <run>
+                                <wait>
+                                    <healthy>true</healthy>
+                                    <time>120000</time>
+                                </wait>
+                                <env>
+                                    <EULA_MINECRAFT_BOOL>true</EULA_MINECRAFT_BOOL>
+                                </env>
+                            </run>
                         </image>
                     </images>
                 </configuration>
 
                 <executions>
                     <execution>
-                        <id>start</id>
+                        <id>build</id>
                         <goals>
                             <goal>build</goal>
-                            <goal>start</goal>
                         </goals>
-                        <phase>pre-integration-test</phase>
-                        <configuration>
-                            <run>
-                                <env>
-                                    <EULA_MINECRAFT_BOOL>true</EULA_MINECRAFT_BOOL>
-                                </env>
-                            </run>
-                        </configuration>
+                        <phase>compile</phase>
                     </execution>
                     <execution>
-                        <id>stop</id>
+                        <id>test</id>
                         <goals>
+                            <goal>start</goal>
                             <goal>stop</goal>
                         </goals>
-                        <phase>post-integration-test</phase>
                     </execution>
                     <execution>
                         <id>deploy</id>
