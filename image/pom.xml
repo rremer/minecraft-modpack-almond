@@ -5,13 +5,13 @@
     <parent>
         <groupId>com.github.rremer</groupId>
         <artifactId>minecraft-modpack-almond</artifactId>
-        <version>20w10a-1</version>
+        <version>20w14a-1</version>
     </parent>
 
     <groupId>com.github.rremer</groupId>
     <artifactId>minecraft-modpack-almond-image</artifactId>
-    <version>20w10a-1</version>
-    <packaging>jar</packaging>
+    <version>20w14a-1</version>
+    <packaging>pom</packaging>
 
     <name>Minecraft Modpack Almond Image</name>
     <description>Container image for a vanilla-substitute of Minecraft.</description>
