@@ -5,12 +5,12 @@
     <parent>
         <groupId>com.github.rremer</groupId>
         <artifactId>minecraft-modpack-almond</artifactId>
-        <version>20w10a-1</version>
+        <version>20w14a-1</version>
     </parent>
 
     <groupId>com.github.rremer</groupId>
     <artifactId>minecraft-modpack-almond-client</artifactId>
-    <version>20w10a-1</version>
+    <version>20w14a-1</version>
     <packaging>jar</packaging>
 
     <name>Minecraft Modpack Almond Client</name>
@@ -61,7 +61,7 @@
                             <goal>wget</goal>
                         </goals>
                         <configuration>
-                            <url>https://media.forgecdn.net/files/2894/930/cloth-events-2.0.0-unstable.202003051905.jar</url>
+				<url>https://media.forgecdn.net/files/2913/278/cloth-events-2.0.2-unstable.jar</url>
                             <outputDirectory>${url.mods.target}</outputDirectory>
                         </configuration>
                     </execution>
@@ -71,7 +71,7 @@
                             <goal>wget</goal>
                         </goals>
                         <configuration>
-                            <url>https://media.forgecdn.net/files/2897/362/config-2-3.0.2-unstable.202003090708.jar</url>
+				<url>https://media.forgecdn.net/files/2922/587/config-2-3.3.2-unstable.jar</url>
                             <outputDirectory>${url.mods.target}</outputDirectory>
                         </configuration>
                     </execution>
