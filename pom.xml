@@ -21,6 +21,7 @@
         <module>client</module>
         <module>datapack</module>
         <module>image</module>
+        <module>kubernetes</module>
     </modules>
 
     <properties>
