@@ -5,12 +5,12 @@
     <parent>
         <groupId>com.github.rremer</groupId>
         <artifactId>minecraft-modpack-almond</artifactId>
-        <version>20w14a-1</version>
+        <version>1.17.1-1</version>
     </parent>
 
     <groupId>com.github.rremer</groupId>
     <artifactId>minecraft-modpack-almond-datapack</artifactId>
-    <version>20w14a-1</version>
+    <version>1.17.1-1</version>
     <packaging>jar</packaging>
 
     <name>Minecraft Modpack Almond Datapack</name>

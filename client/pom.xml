@@ -5,12 +5,12 @@
     <parent>
         <groupId>com.github.rremer</groupId>
         <artifactId>minecraft-modpack-almond</artifactId>
-        <version>20w14a-1</version>
+        <version>1.17.1-1</version>
     </parent>
 
     <groupId>com.github.rremer</groupId>
     <artifactId>minecraft-modpack-almond-client</artifactId>
-    <version>20w14a-1</version>
+    <version>1.17.1-1</version>
     <packaging>jar</packaging>
 
     <name>Minecraft Modpack Almond Client</name>
@@ -44,6 +44,10 @@
                         <phase>generate-sources</phase>
                     </execution>
                     <execution>
+                        <id>architectury</id>
+                        <phase>generate-sources</phase>
+                    </execution>
+                    <execution>
                         <id>carpet</id>
                         <phase>generate-sources</phase>
                     </execution>
@@ -56,22 +60,12 @@
                         <phase>generate-sources</phase>
                     </execution>
                     <execution>
-                        <id>cloth-events</id>
-                        <goals>
-                            <goal>wget</goal>
-                        </goals>
-                        <configuration>
-				<url>https://media.forgecdn.net/files/2913/278/cloth-events-2.0.2-unstable.jar</url>
-                            <outputDirectory>${url.mods.target}</outputDirectory>
-                        </configuration>
-                    </execution>
-                    <execution>
                         <id>cloth-config</id>
                         <goals>
                             <goal>wget</goal>
                         </goals>
                         <configuration>
-				<url>https://media.forgecdn.net/files/2922/587/config-2-3.3.2-unstable.jar</url>
+				<url>https://media.forgecdn.net/files/3329/246/cloth-config-5.0.34-fabric.jar</url>
                             <outputDirectory>${url.mods.target}</outputDirectory>
                         </configuration>
                     </execution>
