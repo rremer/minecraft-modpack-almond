@@ -5,12 +5,12 @@
     <parent>
         <groupId>com.github.rremer</groupId>
         <artifactId>minecraft-modpack-almond</artifactId>
-        <version>20w14a-1</version>
+        <version>1.17.1-1</version>
     </parent>
 
     <groupId>com.github.rremer</groupId>
     <artifactId>minecraft-modpack-almond-image</artifactId>
-    <version>20w14a-1</version>
+    <version>1.17.1-1</version>
     <packaging>pom</packaging>
 
     <name>Minecraft Modpack Almond Image</name>
@@ -19,7 +19,7 @@
     <properties>
         <github.site.location>${project.version}/${project.artifactId}</github.site.location>
         <image.port>25565</image.port>
-        <image.tag.source>docker.io/azul/zulu-openjdk-alpine:8-jre</image.tag.source>
+        <image.tag.source>docker.io/azul/zulu-openjdk-alpine:16-jre</image.tag.source>
         <image.tag.target>${github.owner}/${project.parent.artifactId}</image.tag.target>
         <image.targetdir>/${project.parent.artifactId}</image.targetdir>
         <image.workdir>${image.targetdir}/.minecraft</image.workdir>

@@ -5,12 +5,12 @@
     <parent>
         <groupId>com.github.rremer</groupId>
         <artifactId>minecraft-modpack-almond</artifactId>
-        <version>20w14a-1</version>
+        <version>1.17.1-1</version>
     </parent>
 
     <groupId>com.github.rremer</groupId>
     <artifactId>minecraft-modpack-almond-server</artifactId>
-    <version>20w14a-1</version>
+    <version>1.17.1-1</version>
     <packaging>jar</packaging>
 
     <name>Minecraft Modpack Almond Server</name>
@@ -67,6 +67,10 @@
                         <phase>generate-sources</phase>
                     </execution>
                     <execution>
+                        <id>architectury</id>
+                        <phase>generate-sources</phase>
+                    </execution>
+                    <execution>
                         <id>carpet</id>
                         <phase>generate-sources</phase>
                     </execution>
@@ -77,17 +81,6 @@
                     <execution>
                         <id>rei</id>
                         <phase>generate-sources</phase>
-                    </execution>
-                    <execution>
-                        <id>leaf-decay</id>
-                        <goals>
-                            <goal>wget</goal>
-                        </goals>
-                        <phase>generate-sources</phase>
-                        <configuration>
-                            <url>https://media.forgecdn.net/files/2827/905/leaf-decay-1.1.1.jar</url>
-                            <outputDirectory>${url.mods.target}</outputDirectory>
-                        </configuration>
                     </execution>
                 </executions>
             </plugin>
