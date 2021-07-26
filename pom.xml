@@ -103,7 +103,18 @@
                             </goals>
                             <phase>none</phase>
                             <configuration>
-				    <url>https://media.forgecdn.net/files/3388/180/fabric-carpet-1.17.1-1.4.44%2Bv210714.jar</url>
+				    <url>https://github.com/gnembon/fabric-carpet/releases/download/1.4.43/fabric-carpet-1.17.1-1.4.43+v210706.jar</url>
+                                <outputDirectory>${url.mods.target}</outputDirectory>
+                            </configuration>
+                        </execution>
+                        <execution>
+                            <id>carpet-autocraftingtable</id>
+                            <goals>
+                                <goal>wget</goal>
+                            </goals>
+                            <phase>none</phase>
+                            <configuration>
+				    <url>https://github.com/gnembon/carpet-autoCraftingTable/releases/download/1.4.43/carpet-autocraftingtable-1.17.1-1.4.43.jar</url>
                                 <outputDirectory>${url.mods.target}</outputDirectory>
                             </configuration>
                         </execution>
@@ -114,7 +125,7 @@
                             </goals>
                             <phase>none</phase>
                             <configuration>
-				    <url>https://media.forgecdn.net/files/3380/959/carpet-extra-1.17.1-1.4.43.jar</url>
+				    <url>https://github.com/gnembon/carpet-extra/releases/download/1.4.43/carpet-extra-1.17.1-1.4.43.jar</url>
                                 <outputDirectory>${url.mods.target}</outputDirectory>
                             </configuration>
                         </execution>

@@ -52,6 +52,10 @@
                         <phase>generate-sources</phase>
                     </execution>
                     <execution>
+                        <id>carpet-autocraftingtable</id>
+                        <phase>generate-sources</phase>
+                    </execution>
+                    <execution>
                         <id>carpet-extra</id>
                         <phase>generate-sources</phase>
                     </execution>
