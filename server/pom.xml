@@ -98,6 +98,10 @@
                         <id>terralith</id>
                         <phase>generate-sources</phase>
                     </execution>
+                    <execution>
+                        <id>lithium</id>
+                        <phase>generate-sources</phase>
+                    </execution>
                 </executions>
             </plugin>
             <plugin>

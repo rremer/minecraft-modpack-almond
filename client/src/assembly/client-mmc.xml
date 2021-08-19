@@ -52,10 +52,31 @@
       </includes>
     </fileSet>
     <fileSet>
+      <directory>src/main/resources/config</directory>
+      <outputDirectory>.minecraft</outputDirectory>
+      <includes>
+        <include>options.txt</include>
+      </includes>
+    </fileSet>
+    <fileSet>
       <directory>src/main/resources/assets</directory>
       <outputDirectory>.minecraft</outputDirectory>
       <includes>
         <include>icon.png</include>
+      </includes>
+    </fileSet>
+    <fileSet>
+      <directory>target/shaderpacks</directory>
+      <outputDirectory>.minecraft/shaderpacks</outputDirectory>
+      <includes>
+        <include>*.zip</include>
+      </includes>
+    </fileSet>
+    <fileSet>
+      <directory>target/resourcepacks</directory>
+      <outputDirectory>.minecraft/resourcepacks</outputDirectory>
+      <includes>
+        <include>*.zip</include>
       </includes>
     </fileSet>
   </fileSets>
