@@ -35,6 +35,8 @@
         <url.fabric.installer>https://maven.fabricmc.net/net/fabricmc/fabric-installer/${version.fabric.installer}/fabric-installer-${version.fabric.installer}.jar</url.fabric.installer>
         <url.fabric.installerName>fabric-installer.jar</url.fabric.installerName>
         <url.mods.target>${project.build.directory}/mods</url.mods.target>
+        <url.resourcepacks.target>${project.build.directory}/resourcepacks</url.resourcepacks.target>
+        <url.shaderpacks.target>${project.build.directory}/shaderpacks</url.shaderpacks.target>
 
         <version.download-maven-plugin>1.5.0</version.download-maven-plugin>
         <version.exec-maven-plugin>1.6.0</version.exec-maven-plugin>
@@ -70,7 +72,7 @@
                             </goals>
                             <phase>none</phase>
                             <configuration>
-				    <url>https://media.forgecdn.net/files/3386/484/fabric-api-0.37.0%2B1.17.jar</url>
+                                <url>https://media.forgecdn.net/files/3386/484/fabric-api-0.37.0%2B1.17.jar</url>
                                 <outputDirectory>${url.mods.target}</outputDirectory>
                             </configuration>
                         </execution>
@@ -81,7 +83,7 @@
                             </goals>
                             <phase>none</phase>
                             <configuration>
-				    <url>https://media.forgecdn.net/files/3385/669/architectury-2.2.21-fabric.jar</url>
+                                <url>https://media.forgecdn.net/files/3385/669/architectury-2.2.21-fabric.jar</url>
                                 <outputDirectory>${url.mods.target}</outputDirectory>
                             </configuration>
                         </execution>
@@ -92,7 +94,7 @@
                             </goals>
                             <phase>none</phase>
                             <configuration>
-				    <url>https://media.forgecdn.net/files/3381/485/RoughlyEnoughItems-6.0.264-alpha-fabric.jar</url>
+                                <url>https://media.forgecdn.net/files/3381/485/RoughlyEnoughItems-6.0.264-alpha-fabric.jar</url>
                                 <outputDirectory>${url.mods.target}</outputDirectory>
                             </configuration>
                         </execution>
@@ -103,7 +105,7 @@
                             </goals>
                             <phase>none</phase>
                             <configuration>
-				    <url>https://github.com/gnembon/fabric-carpet/releases/download/1.4.43/fabric-carpet-1.17.1-1.4.43+v210706.jar</url>
+                                <url>https://github.com/gnembon/fabric-carpet/releases/download/1.4.43/fabric-carpet-1.17.1-1.4.43+v210706.jar</url>
                                 <outputDirectory>${url.mods.target}</outputDirectory>
                             </configuration>
                         </execution>
@@ -114,7 +116,7 @@
                             </goals>
                             <phase>none</phase>
                             <configuration>
-				    <url>https://github.com/gnembon/carpet-autoCraftingTable/releases/download/1.4.43/carpet-autocraftingtable-1.17.1-1.4.43.jar</url>
+                                <url>https://github.com/gnembon/carpet-autoCraftingTable/releases/download/1.4.43/carpet-autocraftingtable-1.17.1-1.4.43.jar</url>
                                 <outputDirectory>${url.mods.target}</outputDirectory>
                             </configuration>
                         </execution>
@@ -125,7 +127,7 @@
                             </goals>
                             <phase>none</phase>
                             <configuration>
-				    <url>https://github.com/gnembon/carpet-extra/releases/download/1.4.43/carpet-extra-1.17.1-1.4.43.jar</url>
+                                <url>https://github.com/gnembon/carpet-extra/releases/download/1.4.43/carpet-extra-1.17.1-1.4.43.jar</url>
                                 <outputDirectory>${url.mods.target}</outputDirectory>
                             </configuration>
                         </execution>
@@ -136,7 +138,7 @@
                             </goals>
                             <phase>none</phase>
                             <configuration>
-				    <url>https://media.forgecdn.net/files/3399/353/FastLeafDecay-26.jar</url>
+                                <url>https://media.forgecdn.net/files/3399/353/FastLeafDecay-26.jar</url>
                                 <outputDirectory>${url.mods.target}</outputDirectory>
                             </configuration>
                         </execution>
@@ -147,7 +149,7 @@
                             </goals>
                             <phase>none</phase>
                             <configuration>
-				    <url>https://media.forgecdn.net/files/3420/498/Terralith+v1.3.jar</url>
+                                <url>https://media.forgecdn.net/files/3420/498/Terralith+v1.3.jar</url>
                                 <outputDirectory>${url.mods.target}</outputDirectory>
                             </configuration>
                         </execution>
@@ -158,7 +160,50 @@
                             </goals>
                             <phase>none</phase>
                             <configuration>
-				    <url>https://media.forgecdn.net/files/3424/549/voicechat-fabric-1.17.1-1.1.7.jar</url>
+                                <url>https://media.forgecdn.net/files/3424/549/voicechat-fabric-1.17.1-1.1.7.jar</url>
+                                <outputDirectory>${url.mods.target}</outputDirectory>
+                            </configuration>
+                        </execution>
+                        <execution>
+                            <id>lithium</id>
+                            <goals>
+                                <goal>wget</goal>
+                            </goals>
+                            <phase>none</phase>
+                            <configuration>
+                                <url>https://media.forgecdn.net/files/3380/166/lithium-fabric-mc1.17.1-0.7.3.jar</url>
+                                <outputDirectory>${url.mods.target}</outputDirectory>
+                            </configuration>
+                        </execution>
+                        <execution>
+                            <id>iris</id>
+                            <goals>
+                                <goal>wget</goal>
+                            </goals>
+                            <phase>none</phase>
+                            <configuration>
+                                <url>https://media.forgecdn.net/files/3404/785/iris-mc1.17-1.1.1.jar</url>
+                                <outputDirectory>${url.mods.target}</outputDirectory>
+                            </configuration>
+                        </execution>
+                        <execution>
+                            <id>shaderpacks-complementary</id>
+                            <goals>
+                                <goal>wget</goal>
+                            </goals>
+                            <phase>none</phase>
+                            <configuration>
+                                <url>https://media.forgecdn.net/files/3391/516/ComplementaryShaders_v4.1.zip</url>
+                                <outputDirectory>${url.shaderpacks.target}</outputDirectory>
+                            </configuration>
+                        </execution>
+                        <execution>
+                            <id>cloth-config</id>
+                            <goals>
+                                <goal>wget</goal>
+                            </goals>
+                            <configuration>
+                                <url>https://media.forgecdn.net/files/3329/246/cloth-config-5.0.34-fabric.jar</url>
                                 <outputDirectory>${url.mods.target}</outputDirectory>
                             </configuration>
                         </execution>

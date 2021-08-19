@@ -68,14 +68,16 @@
                         <phase>generate-sources</phase>
                     </execution>
                     <execution>
+                        <id>iris</id>
+                        <phase>generate-sources</phase>
+                    </execution>
+                    <execution>
+                        <id>shaderpacks-complementary</id>
+                        <phase>generate-sources</phase>
+                    </execution>
+                    <execution>
                         <id>cloth-config</id>
-                        <goals>
-                            <goal>wget</goal>
-                        </goals>
-                        <configuration>
-				<url>https://media.forgecdn.net/files/3329/246/cloth-config-5.0.34-fabric.jar</url>
-                            <outputDirectory>${url.mods.target}</outputDirectory>
-                        </configuration>
+                        <phase>generate-sources</phase>
                     </execution>
                 </executions>
             </plugin>
