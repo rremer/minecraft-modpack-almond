@@ -5,12 +5,12 @@
     <parent>
         <groupId>com.github.rremer</groupId>
         <artifactId>minecraft-modpack-almond</artifactId>
-        <version>1.17.1-1</version>
+        <version>1.18.0-1</version>
     </parent>
 
     <groupId>com.github.rremer</groupId>
     <artifactId>minecraft-modpack-almond-client</artifactId>
-    <version>1.17.1-1</version>
+    <version>1.18.0-1</version>
     <packaging>jar</packaging>
 
     <name>Minecraft Modpack Almond Client</name>
@@ -44,10 +44,6 @@
                         <phase>generate-sources</phase>
                     </execution>
                     <execution>
-                        <id>architectury</id>
-                        <phase>generate-sources</phase>
-                    </execution>
-                    <execution>
                         <id>carpet</id>
                         <phase>generate-sources</phase>
                     </execution>
@@ -60,11 +56,19 @@
                         <phase>generate-sources</phase>
                     </execution>
                     <execution>
+                        <id>rei-architectury</id>
+                        <phase>generate-sources</phase>
+                    </execution>
+                    <execution>
                         <id>rei</id>
                         <phase>generate-sources</phase>
                     </execution>
                     <execution>
                         <id>voicechat</id>
+                        <phase>generate-sources</phase>
+                    </execution>
+                    <execution>
+                        <id>iris-sodium</id>
                         <phase>generate-sources</phase>
                     </execution>
                     <execution>

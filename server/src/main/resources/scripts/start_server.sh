@@ -27,7 +27,9 @@ fi
 # run the server
 java \
 -Dlog4j.configurationFile=log4j2.xml \
+-Dlog4j2.enableJndiLookup=false \
 "${JAVA_GARBAGE_COLLECT_OPTIONS}" \
 -Xms"${JAVA_MIN_HEAP_GB}g" \
 -Xmx"${JAVA_MAX_HEAP_GB}g" \
--jar "${FABRIC_LAUNCHER_FILENAME}"
+-jar "${FABRIC_LAUNCHER_FILENAME}" \
+-nogui

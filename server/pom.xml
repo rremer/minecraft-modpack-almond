@@ -5,12 +5,12 @@
     <parent>
         <groupId>com.github.rremer</groupId>
         <artifactId>minecraft-modpack-almond</artifactId>
-        <version>1.17.1-1</version>
+        <version>1.18.0-1</version>
     </parent>
 
     <groupId>com.github.rremer</groupId>
     <artifactId>minecraft-modpack-almond-server</artifactId>
-    <version>1.17.1-1</version>
+    <version>1.18.0-1</version>
     <packaging>jar</packaging>
 
     <name>Minecraft Modpack Almond Server</name>
@@ -41,7 +41,7 @@
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>minecraft-modpack-almond-datapack</artifactId>
+            <artifactId>minecraft-modpack-almond-datapack-recipes</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>
@@ -67,7 +67,7 @@
                         <phase>generate-sources</phase>
                     </execution>
                     <execution>
-                        <id>architectury</id>
+                        <id>lithium</id>
                         <phase>generate-sources</phase>
                     </execution>
                     <execution>
@@ -83,6 +83,10 @@
                         <phase>generate-sources</phase>
                     </execution>
                     <execution>
+                        <id>rei-architectury</id>
+                        <phase>generate-sources</phase>
+                    </execution>
+                    <execution>
                         <id>rei</id>
                         <phase>generate-sources</phase>
                     </execution>
@@ -95,11 +99,7 @@
                         <phase>generate-sources</phase>
                     </execution>
                     <execution>
-                        <id>terralith</id>
-                        <phase>generate-sources</phase>
-                    </execution>
-                    <execution>
-                        <id>lithium</id>
+                        <id>enhanced-celestials</id>
                         <phase>generate-sources</phase>
                     </execution>
                 </executions>
@@ -127,7 +127,7 @@
                 <version>${version.maven-dependency-plugin}</version>
                 <executions>
                     <execution>
-                        <id>datapack</id>
+                        <id>datapacks</id>
                         <goals>
                             <goal>copy</goal>
                         </goals>
@@ -136,7 +136,7 @@
                             <artifactItems>
                                 <artifactItem>
                                     <groupId>${project.groupId}</groupId>
-                                    <artifactId>minecraft-modpack-almond-datapack</artifactId>
+                                    <artifactId>minecraft-modpack-almond-datapack-recipes</artifactId>
                                     <version>${project.version}</version>
                                     <type>zip</type>
                                     <overWrite>true</overWrite>
@@ -146,6 +146,15 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.basepom.maven</groupId>
+                <artifactId>duplicate-finder-maven-plugin</artifactId>
+                <configuration>
+                    <ignoredResourcePatterns>
+                        <ignoredResourcePattern>pack.mcmeta</ignoredResourcePattern>
+                    </ignoredResourcePatterns>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
