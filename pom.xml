@@ -10,7 +10,7 @@
 
     <groupId>com.github.rremer</groupId>
     <artifactId>minecraft-modpack-almond</artifactId>
-    <version>1.18.1-1</version>
+    <version>1.18.1-2-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>Minecraft Modpack Almond</name>
