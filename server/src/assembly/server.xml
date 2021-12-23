@@ -76,6 +76,7 @@
       <includes>
         <include>**/*.cfg</include>
         <include>**/*.json</include>
+        <include>**/*.hjson</include>
       </includes>
     </fileSet>
     <fileSet>

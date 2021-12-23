@@ -95,6 +95,10 @@
                         <id>immersive-portals</id>
                         <phase>generate-sources</phase>
                     </execution>
+                    <execution>
+                        <id>spice-of-life</id>
+                        <phase>generate-sources</phase>
+                    </execution>
                 </executions>
             </plugin>
             <plugin>

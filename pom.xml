@@ -273,6 +273,18 @@
                                 <outputDirectory>${url.mods.target}</outputDirectory>
                             </configuration>
                         </execution>
+                        <execution>
+                            <id>spice-of-life</id>
+                            <goals>
+                                <goal>wget</goal>
+                            </goals>
+                            <phase>none</phase>
+                            <configuration>
+				<!-- https://github.com/Siphalor/spiceoffabric/releases -->
+				<url>https://github.com/Siphalor/spiceoffabric/releases/download/v1.4.1%2B1.18-pre5/spiceoffabric-1.4.1+1.18-pre5.jar</url>
+                                <outputDirectory>${url.mods.target}</outputDirectory>
+                            </configuration>
+                        </execution>
                     </executions>
                 </plugin>
                 <plugin>
