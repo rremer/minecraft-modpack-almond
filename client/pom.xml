@@ -64,6 +64,10 @@
                         <phase>generate-sources</phase>
                     </execution>
                     <execution>
+                        <id>rer</id>
+                        <phase>generate-sources</phase>
+                    </execution>
+                    <execution>
                         <id>voicechat</id>
                         <phase>generate-sources</phase>
                     </execution>

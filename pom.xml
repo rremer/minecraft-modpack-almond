@@ -100,6 +100,18 @@
                             </configuration>
                         </execution>
                         <execution>
+                            <id>rer</id>
+                            <goals>
+                                <goal>wget</goal>
+                            </goals>
+                            <phase>none</phase>
+                            <configuration>
+				<!-- https://www.curseforge.com/minecraft/mc-mods/roughly-enough-resources/files -->
+				<url>https://media.forgecdn.net/files/3570/596/rer-2.3.0.jar</url>
+                                <outputDirectory>${url.mods.target}</outputDirectory>
+                            </configuration>
+                        </execution>
+                        <execution>
                             <id>carpet</id>
                             <goals>
                                 <goal>wget</goal>
