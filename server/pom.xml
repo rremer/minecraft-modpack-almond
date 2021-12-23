@@ -102,6 +102,10 @@
                         <id>enhanced-celestials</id>
                         <phase>generate-sources</phase>
                     </execution>
+                    <execution>
+                        <id>graves</id>
+                        <phase>generate-sources</phase>
+                    </execution>
                 </executions>
             </plugin>
             <plugin>
