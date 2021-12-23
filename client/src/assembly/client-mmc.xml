@@ -52,6 +52,13 @@
       </includes>
     </fileSet>
     <fileSet>
+      <directory>src/main/resources/roughlyenoughitems</directory>
+      <outputDirectory>.minecraft/config/roughlyenoughitems</outputDirectory>
+      <includes>
+        <include>*</include>
+      </includes>
+    </fileSet>
+    <fileSet>
       <directory>src/main/resources/config</directory>
       <outputDirectory>.minecraft</outputDirectory>
       <includes>
