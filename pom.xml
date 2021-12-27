@@ -285,6 +285,18 @@
                                 <outputDirectory>${url.mods.target}</outputDirectory>
                             </configuration>
                         </execution>
+                        <execution>
+                            <id>effective</id>
+                            <goals>
+                                <goal>wget</goal>
+                            </goals>
+                            <phase>none</phase>
+                            <configuration>
+				<!-- https://www.curseforge.com/minecraft/mc-mods/effective/files -->
+				<url>https://media.forgecdn.net/files/3580/78/effective-1.1.jar</url>
+                                <outputDirectory>${url.mods.target}</outputDirectory>
+                            </configuration>
+                        </execution>
                     </executions>
                 </plugin>
                 <plugin>
