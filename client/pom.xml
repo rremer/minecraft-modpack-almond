@@ -103,6 +103,14 @@
                         <id>effective</id>
                         <phase>generate-sources</phase>
                     </execution>
+                    <execution>
+                        <id>litematica-malilib</id>
+                        <phase>generate-sources</phase>
+                    </execution>
+                    <execution>
+                        <id>litematica</id>
+                        <phase>generate-sources</phase>
+                    </execution>
                 </executions>
             </plugin>
             <plugin>
