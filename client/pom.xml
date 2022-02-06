@@ -88,10 +88,6 @@
                         <phase>generate-sources</phase>
                     </execution>
                     <execution>
-                        <id>chalk</id>
-                        <phase>generate-sources</phase>
-                    </execution>
-                    <execution>
                         <id>immersive-portals</id>
                         <phase>generate-sources</phase>
                     </execution>
