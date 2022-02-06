@@ -12,12 +12,70 @@ A Fabric/datapack vanilla-substitute for Minecraft.
 
 Currently, this modpack is distributed as a [MultiMC] zip.
 
-1. [Download MultiMC] and install.
-2. Open MultiMC and and add login credentials
-3. Click "Add Instance" and select "Import from zip" on the left-hand side.
-4. Paste in this URL: [MMC client release 1.18.1-1] and hit <Enter> 
-5. When the download finishes, double-click 'minecraft-modpack-almond-client-1.18.1-1.zip'
-6. If you are not signed into a Mojang account, you will be promted for credentials
+1. If you don't have Java 17+, install it. Here's a recent build for [Windows](https://cdn.azul.com/zulu/bin/zulu17.32.13-ca-jdk17.0.2-win_x64.msi), [MacOs](https://www.azul.com/downloads/?version=java-17-lts&os=macos&architecture=x86-64-bit&package=jdk), [Linux](https://www.azul.com/downloads/?version=java-17-lts&os=linux&architecture=x86-64-bit&package=jdk)
+2. [Download MultiMC] and install.
+3. Open MultiMC and and add login credentials
+4. Click "Add Instance" and select "Import from zip" on the left-hand side.
+5. Paste in this URL: [MMC client release 1.18.1-1] and hit <Enter> 
+6. When the download finishes, double-click 'minecraft-modpack-almond-client-1.18.1-1.zip'
+7. If you are not signed into a Mojang account, you will be promted for credentials
+
+## Features
+
+This modpack aims to be 'Vanilla+', so primarily quality-of-life features have been added, but also some gameplay additions which are in keeping with Minecraft lore.
+
+### Quality of Life
+
+Here' a summary of the quality-of-life features provided by this modpack.
+
+#### Just Enough Items (JEI), Just Enough Resources (JER)
+
+Open your inventory to get a sidebar of searchable items and their recipes. Additionally see natural resources and their spawn distributions.
+
+#### Proximity Voice Chat
+
+New voice chat GUI leverages your existing microphone setup. By default, will fade out voice chat so you only hear nearby players. You can create a group to simulate a chatroom of infite distance/dimensions, ala Discord.
+
+#### Corpse
+
+If you die, your items are safely stored in a your corpse which any player can retreive for you. The corpse is immune to lava, will spawn on the closes block in case you died in a void, and will never despawn unless its contents are empty.
+
+#### Lithium/Iris/Sodium/Shaderpacks
+
+Lithium is included to speed up framerate. Iris is included along with the 'Complementary Shaders' pack, so if you want fancy current-gen graphics and lighting, you can toggle that on.
+
+#### Fast Leaf Decay
+
+Chopping down a tree's logs won't leave leaves in the air forever.
+
+#### Litematica
+
+Save a schematica of something you've built in this world or another, and then 'project' it in your current world to show where to build block-for-block. Schematics include an inventory list of materials, so you can mock up builds in Creative mode and then get to work in Survival Multiplayer.
+
+#### Immersive Portals
+
+See through portals into the next dimension they go to in realtime.
+
+### Gameplay
+
+Here's a summary of the gameplay changes itroduced in this modpack.
+
+#### Spice Of Life: Carrot Edition *
+
+When you eat a number of unique new foods, your max health will be permanently increase. Explore to find new food sources, and farm them to share the buff with your friends.
+
+#### Enhanced Celestials
+
+Blood moon event prevents players from sleeping through the night, and increases the mob cap and spawn rate of mabs. Harvest moon event increases plant growth and drop rates.
+
+
+#### Carpet Autocrafting Table
+
+Crafting tables can be pushed by pistons. Items can be pumped into crafiting tables via hoppers. Recipes are automatically completed in this manner and can be sucked out via hoppers on the bottom of the table. 
+
+#### Carpet Extra
+
+Dispensers can place blocks, feed and milk animals, and till soil. Amethyst nodes cane be pushed with pistons, along with other previously unmovable blocks like chests, dispensers, and crafting tables. Chickens can be sheared to get feathers.
 
 
 ## Building
