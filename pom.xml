@@ -244,8 +244,8 @@
                             </goals>
                             <phase>none</phase>
                             <configuration>
-				<!-- https://www.curseforge.com/minecraft/mc-mods/universal-graves/files -->
-				<url>https://media.forgecdn.net/files/3578/240/graves-2.0.0-beta.2.1%2B1.18.jar</url>
+				<!-- https://www.curseforge.com/minecraft/mc-mods/corpse/files -->
+				<url>https://media.forgecdn.net/files/3625/679/corpse-1.18.1-1.0.4.jar</url>
                                 <outputDirectory>${url.mods.target}</outputDirectory>
                             </configuration>
                         </execution>
