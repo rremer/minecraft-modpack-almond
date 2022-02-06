@@ -36,7 +36,7 @@
 		// Sets the amount of last eaten foods to use for the calculations in this category
 		// default: 20
 		// Must be greater or equal to 0
-		history-length: 100
+		history-length: 600
 	}
 	// The good ol' carrot style.
 	// Carrot style means, that you start with a certain amount of hearts and gain more by eating unique foods.
@@ -48,12 +48,12 @@
 		// Default health in vanilla is 20 but that may change through mods like Origins.
 		// The resulting value will be floored before use.
 		// default: (0.6 * baseHealth) + max(2 * log2(uniqueFoodsEaten), 0)
-		health-formula: baseHealth + (uniqueFoodsEaten * 0.5)
+		health-formula: baseHealth + (uniqueFoodsEaten * 0.1)
 		// Specifies the maximum number of health points (half hearts) a player can get to through carrot mode.
 		// When 0, carrot mode is effectively disabled. (Why would you do this? :P)
 		// When -1, you can gain a basically infinite amount of hearts.
 		// default: -1
 		// Must be inclusively between -1 and 200
-		max-health: -1
+		max-health: 60
 	}
 }

@@ -274,6 +274,18 @@
                             </configuration>
                         </execution>
                         <execution>
+                            <id>croptopia</id>
+                            <goals>
+                                <goal>wget</goal>
+                            </goals>
+                            <phase>none</phase>
+                            <configuration>
+				<!-- https://www.curseforge.com/minecraft/mc-mods/croptopia-fabric/files -->
+				<url>https://media.forgecdn.net/files/3590/391/Croptopia-1.18-FABRIC-1.8.0.jar</url>
+                                <outputDirectory>${url.mods.target}</outputDirectory>
+                            </configuration>
+                        </execution>
+                        <execution>
                             <id>effective</id>
                             <goals>
                                 <goal>wget</goal>
