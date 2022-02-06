@@ -114,6 +114,10 @@
                         <id>spice-of-life</id>
                         <phase>generate-sources</phase>
                     </execution>
+                    <execution>
+                        <id>croptopia</id>
+                        <phase>generate-sources</phase>
+                    </execution>
                 </executions>
             </plugin>
             <plugin>

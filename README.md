@@ -62,7 +62,7 @@ Here's a summary of the gameplay changes itroduced in this modpack.
 
 #### Spice Of Life: Carrot Edition *
 
-When you eat a number of unique new foods, your max health will be permanently increase. Explore to find new food sources, and farm them to share the buff with your friends.
+When you eat 10 new unique food items, your max health will permanently increase by 1 heart (max 30, or 3x default healthbar). Explore to find new food sources, and farm them to share the bounty with your friends.
 
 #### Enhanced Celestials
 
