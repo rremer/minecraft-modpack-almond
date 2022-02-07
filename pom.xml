@@ -286,6 +286,18 @@
                             </configuration>
                         </execution>
                         <execution>
+                            <id>patchouli</id>
+                            <goals>
+                                <goal>wget</goal>
+                            </goals>
+                            <phase>none</phase>
+                            <configuration>
+				<!-- https://www.curseforge.com/minecraft/mc-mods/patchouli/files -->
+				<url>https://media.forgecdn.net/files/3630/725/Patchouli-1.18.1-65.jar</url>
+                                <outputDirectory>${url.mods.target}</outputDirectory>
+                            </configuration>
+                        </execution>
+                        <execution>
                             <id>litematica-malilib</id>
                             <goals>
                                 <goal>wget</goal>
