@@ -28,17 +28,17 @@ This modpack aims to be 'Vanilla+', so primarily quality-of-life features have b
 
 Here' a summary of the quality-of-life features provided by this modpack.
 
+#### Recipe and Loot Table Fixes
+
+Wither skeletons have a much higher chance of dropping a wither skull.
+
 #### Just Enough Items (JEI), Just Enough Resources (JER)
 
 Open your inventory to get a sidebar of searchable items and their recipes. Additionally see natural resources and their spawn distributions.
 
-#### Proximity Voice Chat
+#### Worldmap
 
-New voice chat GUI leverages your existing microphone setup. By default, will fade out voice chat so you only hear nearby players. You can create a group to simulate a chatroom of infite distance/dimensions, ala Discord.
-
-#### Corpse
-
-If you die, your items are safely stored in a your corpse which any player can retreive for you. The corpse is immune to lava, will spawn on the closes block in case you died in a void, and will never despawn unless its contents are empty.
+A realtime map to help find your way.
 
 #### Lithium/Iris/Sodium/Shaderpacks
 

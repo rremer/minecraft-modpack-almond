@@ -159,17 +159,6 @@
                             </configuration>
                         </execution>
                         <execution>
-                            <id>voicechat</id>
-                            <goals>
-                                <goal>wget</goal>
-                            </goals>
-                            <phase>none</phase>
-                            <configuration>
-				<url>https://media.forgecdn.net/files/3557/160/voicechat-fabric-1.18.1-2.1.22.jar</url>
-                                <outputDirectory>${url.mods.target}</outputDirectory>
-                            </configuration>
-                        </execution>
-                        <execution>
                             <id>lithium</id>
                             <goals>
                                 <goal>wget</goal>
@@ -238,14 +227,14 @@
                             </configuration>
                         </execution>
                         <execution>
-                            <id>graves</id>
+                            <id>worldmap</id>
                             <goals>
                                 <goal>wget</goal>
                             </goals>
                             <phase>none</phase>
                             <configuration>
-				<!-- https://www.curseforge.com/minecraft/mc-mods/corpse/files -->
-				<url>https://media.forgecdn.net/files/3625/679/corpse-1.18.1-1.0.4.jar</url>
+				<!-- https://www.curseforge.com/minecraft/mc-mods/xaeros-world-map/files -->
+				<url>https://media.forgecdn.net/files/3626/670/XaerosWorldMap_1.20.1_Fabric_1.18.jar</url>
                                 <outputDirectory>${url.mods.target}</outputDirectory>
                             </configuration>
                         </execution>

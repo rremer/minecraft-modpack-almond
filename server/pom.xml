@@ -91,7 +91,7 @@
                         <phase>generate-sources</phase>
                     </execution>
                     <execution>
-                        <id>voicechat</id>
+                        <id>rer</id>
                         <phase>generate-sources</phase>
                     </execution>
                     <execution>
@@ -100,10 +100,6 @@
                     </execution>
                     <execution>
                         <id>enhanced-celestials</id>
-                        <phase>generate-sources</phase>
-                    </execution>
-                    <execution>
-                        <id>graves</id>
                         <phase>generate-sources</phase>
                     </execution>
                     <execution>
