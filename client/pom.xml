@@ -68,10 +68,6 @@
                         <phase>generate-sources</phase>
                     </execution>
                     <execution>
-                        <id>voicechat</id>
-                        <phase>generate-sources</phase>
-                    </execution>
-                    <execution>
                         <id>iris-sodium</id>
                         <phase>generate-sources</phase>
                     </execution>
@@ -109,6 +105,10 @@
                     </execution>
                     <execution>
                         <id>litematica</id>
+                        <phase>generate-sources</phase>
+                    </execution>
+                    <execution>
+                        <id>worldmap</id>
                         <phase>generate-sources</phase>
                     </execution>
                 </executions>
