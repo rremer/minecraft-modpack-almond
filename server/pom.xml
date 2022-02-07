@@ -118,6 +118,10 @@
                         <id>croptopia</id>
                         <phase>generate-sources</phase>
                     </execution>
+                    <execution>
+                        <id>patchouli</id>
+                        <phase>generate-sources</phase>
+                    </execution>
                 </executions>
             </plugin>
             <plugin>
