@@ -281,6 +281,7 @@
                             </goals>
                             <phase>none</phase>
                             <configuration>
+                                <!-- guidebook not working (not harmful) https://github.com/ExcessiveAmountsOfZombies/Croptopia/issues/314 -->
 				<!-- https://www.curseforge.com/minecraft/mc-mods/patchouli/files -->
 				<url>https://media.forgecdn.net/files/3630/725/Patchouli-1.18.1-65.jar</url>
                                 <outputDirectory>${url.mods.target}</outputDirectory>
