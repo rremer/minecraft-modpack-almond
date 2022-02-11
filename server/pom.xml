@@ -118,6 +118,10 @@
                         <id>patchouli</id>
                         <phase>generate-sources</phase>
                     </execution>
+                    <execution>
+                        <id>teleport</id>
+                        <phase>generate-sources</phase>
+                    </execution>
                 </executions>
             </plugin>
             <plugin>
