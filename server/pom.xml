@@ -130,6 +130,10 @@
                         <id>bcdt</id>
                         <phase>generate-sources</phase>
                     </execution>
+                    <execution>
+                        <id>graves</id>
+                        <phase>generate-sources</phase>
+                    </execution>
                 </executions>
             </plugin>
             <plugin>
