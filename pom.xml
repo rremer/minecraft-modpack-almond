@@ -275,6 +275,18 @@
                             </configuration>
                         </execution>
                         <execution>
+                            <id>bcdt</id>
+                            <goals>
+                                <goal>wget</goal>
+                            </goals>
+                            <phase>none</phase>
+                            <configuration>
+				<!-- https://www.curseforge.com/minecraft/mc-mods/bcdt-expansion/files -->
+				<url>https://media.forgecdn.net/files/3565/277/bcdt-expansion-1.18.1-1.1.1.jar</url>
+                                <outputDirectory>${url.mods.target}</outputDirectory>
+                            </configuration>
+                        </execution>
+                        <execution>
                             <id>teleport</id>
                             <goals>
                                 <goal>wget</goal>
