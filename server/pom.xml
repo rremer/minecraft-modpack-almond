@@ -119,6 +119,10 @@
                         <phase>generate-sources</phase>
                     </execution>
                     <execution>
+                        <id>teleport-lib</id>
+                        <phase>generate-sources</phase>
+                    </execution>
+                    <execution>
                         <id>teleport</id>
                         <phase>generate-sources</phase>
                     </execution>
