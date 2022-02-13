@@ -359,6 +359,18 @@
                                 <outputDirectory>${url.mods.target}</outputDirectory>
                             </configuration>
                         </execution>
+                        <execution>
+                            <id>advanced-compass</id>
+                            <goals>
+                                <goal>wget</goal>
+                            </goals>
+                            <phase>none</phase>
+                            <configuration>
+				<!-- https://www.curseforge.com/minecraft/mc-mods/advanced-compass/files -->
+				<url>https://media.forgecdn.net/files/3546/281/AdvancedCompass-fabric-1.18-1.2.6.jar</url>
+                                <outputDirectory>${url.mods.target}</outputDirectory>
+                            </configuration>
+                        </execution>
                     </executions>
                 </plugin>
                 <plugin>

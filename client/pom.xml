@@ -127,6 +127,10 @@
                         <id>graves</id>
                         <phase>generate-sources</phase>
                     </execution>
+                    <execution>
+                        <id>advanced-compass</id>
+                        <phase>generate-sources</phase>
+                    </execution>
                 </executions>
             </plugin>
             <plugin>
