@@ -1,8 +1,8 @@
 # minecraft-modpack-almond
 
 [![Build Status](https://img.shields.io/travis/rremer/minecraft-modpack-almond/master)](https://travis-ci.org/github/rremer/minecraft-modpack-almond)
-[![Maven Central](https://img.shields.io/maven-central/v/com.github.rremer/minecraft-modpack-almond-client.svg?label=client)](https://search.maven.org/artifact/com.github.rremer/minecraft-modpack-almond-client/1.18.1-1/jar)
-[![Docker Tag](https://img.shields.io/docker/v/rremer/minecraft-modpack-almond/1.18.1-1?label=docker)](https://hub.docker.com/repository/docker/rremer/minecraft-modpack-almond/general)
+[![Maven Central](https://img.shields.io/maven-central/v/com.github.rremer/minecraft-modpack-almond-client.svg?label=client)](https://search.maven.org/artifact/com.github.rremer/minecraft-modpack-almond-client/1.18.1-2/jar)
+[![Docker Tag](https://img.shields.io/docker/v/rremer/minecraft-modpack-almond/1.18.1-2?label=docker)](https://hub.docker.com/repository/docker/rremer/minecraft-modpack-almond/general)
 [![License](https://img.shields.io/github/license/rremer/minecraft-modpack-almond)](https://opensource.org/licenses/MIT)
 [![Keybase PGP](https://img.shields.io/keybase/pgp/rremer)](https://keybase.io/rremer/pgp_keys.asc)
 
