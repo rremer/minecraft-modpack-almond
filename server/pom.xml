@@ -138,6 +138,10 @@
                         <id>natures-compass</id>
                         <phase>generate-sources</phase>
                     </execution>
+                    <execution>
+                        <id>backup</id>
+                        <phase>generate-sources</phase>
+                    </execution>
                 </executions>
             </plugin>
             <plugin>

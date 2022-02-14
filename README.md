@@ -62,7 +62,7 @@ Chopping down a tree's logs won't leave leaves in the air forever.
 
 #### Litematica
 
-Save a schematica of something you've built in this world or another, and then 'project' it in your current world to show where to build block-for-block. Schematics include an inventory list of materials, so you can mock up builds in Creative mode and then get to work in Survival Multiplayer.
+Save a schematic of something you've built in this world or another, and then 'project' it in your current world to show where to build block-for-block. Schematics include an inventory list of materials, so you can mock up builds in Creative mode and then get to work in Survival Multiplayer.
 
 #### Immersive Portals
 
@@ -87,12 +87,18 @@ Crafting tables can be pushed by pistons. Items can be pumped into crafiting tab
 
 #### Carpet Extra
 
-Dispensers can place blocks, feed and milk animals, and till soil. Amethyst nodes cane be pushed with pistons, along with other previously unmovable blocks like chests, dispensers, and crafting tables. Chickens can be sheared to get feathers.
+Dispensers can place blocks, feed and milk animals, and till soil. Amethyst nodes can be pushed with pistons, along with other previously unmovable blocks like chests, dispensers, and crafting tables. Chickens can be sheared to get feathers.
 
 
 #### Extra Block, Crop variants
 
 Croptopia implements fruiting trees and vegetables into world generation, along with extra higher tier foods and kitchen crafting items to make them. Slab/stair/polished variants of many blocks are added.
+
+
+#### Carpet Commands
+
+For technical Minecrafters, many Carpet commands are exposed to non-operators, such as `/profile` so you can quantify how much of a burden you are on your ~~friends~~ server.
+
 
 ## Building
 
@@ -108,9 +114,10 @@ docker run -d \
   -p 25565:25565 \
   -e EULA_MINECRAFT_BOOL=true \
   -v /path/to/persistent/world:/minecraft-modpack-almond/.minecraft/world \
+  -v /path/to/persistent/backup:/minecraft-modpack-almond/.minecraft/backup \
   rremer/minecraft-modpack-almond:1.18.1-1
 ```
-... where ```/path/to/persistent/world``` is some real local filesystem to persist the world data between container restarts.
+... where ```/path/to/persistent``` is some real local filesystem to persist the world data between container restarts.
 
 
 ## Releasing
