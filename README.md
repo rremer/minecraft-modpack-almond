@@ -40,6 +40,18 @@ Open your inventory to get a sidebar of searchable items and their recipes. Addi
 
 A realtime map to help find your way.
 
+#### Advanced Compass
+
+Have a normal compass, but get a compass bar in your UI with distances to mobs and custom waypoints.
+
+#### Nature's Compass
+
+Locate specific biomes with this compass.
+
+#### Gravestones
+
+No timer to get back your stuff.
+
 #### Lithium/Iris/Sodium/Shaderpacks
 
 Lithium is included to speed up framerate. Iris is included along with the 'Complementary Shaders' pack, so if you want fancy current-gen graphics and lighting, you can toggle that on.
@@ -77,6 +89,10 @@ Crafting tables can be pushed by pistons. Items can be pumped into crafiting tab
 
 Dispensers can place blocks, feed and milk animals, and till soil. Amethyst nodes cane be pushed with pistons, along with other previously unmovable blocks like chests, dispensers, and crafting tables. Chickens can be sheared to get feathers.
 
+
+#### Extra Block, Crop variants
+
+Croptopia implements fruiting trees and vegetables into world generation, along with extra higher tier foods and kitchen crafting items to make them. Slab/stair/polished variants of many blocks are added.
 
 ## Building
 
