@@ -24,7 +24,7 @@
     </modules>
 
     <properties>
-        <github.project>${project.artifactId}</github.project>
+        <github.project>minecraft-modpack-almond</github.project>
         <github.site.location>${project.version}</github.site.location>
         <github.site.url>https://${github.owner}.github.io/${github.project}</github.site.url>
         <parameter.disable.semantic.versioning>true</parameter.disable.semantic.versioning>
